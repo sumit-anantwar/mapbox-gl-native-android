@@ -20,7 +20,7 @@ public class PulsingLocationCircleAnimator extends MapboxFloatAnimator {
   public PulsingLocationCircleAnimator(AnimationsValueChangeListener updateListener,
                                        int maxAnimationFps,
                                        float circleMaxRadius) {
-    super(0f, circleMaxRadius, updateListener, maxAnimationFps);
+    super(new Float[]{0f, circleMaxRadius}, updateListener, maxAnimationFps);
   }
 
   public Interpolator retrievePulseInterpolator(String desiredInterpolatorFromOptions) {
