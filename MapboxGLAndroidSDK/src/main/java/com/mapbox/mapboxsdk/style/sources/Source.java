@@ -92,6 +92,17 @@ public abstract class Source {
     nativeSetPrefetchZoomDelta(delta);
   }
 
+  // TODO: documentation
+  public void setMaxOverscaleFactor(@Nullable Integer maxOverscaleFactor) {
+    nativeSetMaxOverscaleFactor(maxOverscaleFactor);
+  }
+
+  // TODO: documentation
+  @Nullable
+  public Integer getMaxOverscaleFactor() {
+    return nativeGetMaxOverscaleFactor();
+  }
+
   /**
    * Internal use
    *
@@ -116,6 +127,14 @@ public abstract class Source {
   @NonNull
   @Keep
   protected native void nativeSetPrefetchZoomDelta(Integer delta);
+
+  @NonNull
+  @Keep
+  protected native Integer nativeGetMaxOverscaleFactor();
+
+  @NonNull
+  @Keep
+  protected native void nativeSetMaxOverscaleFactor(Integer overscaleFactor);
 
   public void setDetached() {
     detached = true;
